@@ -1,0 +1,20 @@
+﻿<Window x:Class="BridgeLeagueCalc.LoadCSVDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BridgeLeagueCalc"
+        Title="LoadCSVDialog" Height="300" Width="300">
+    <Grid Margin="10">
+        <DockPanel>
+            <WrapPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <Button Margin="5" Width="55" Click="OnOk">OK</Button>
+                <Button Margin="5" Width="55" Click="OnCancel">Cancel</Button>
+            </WrapPanel>
+            <StackPanel>
+                <Label Content="_CSV File:" Target="{Binding ElementName=_fileField}" />
+                <TextBox x:Name="_fileField" Text="{Binding File, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Content="_Delimiter:" Target="{Binding ElementName=_delimiterField}" />
+                <TextBox x:Name="_delimiterField" Text="{Binding Delimiter, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
